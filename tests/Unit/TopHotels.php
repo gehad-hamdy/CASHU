@@ -20,7 +20,7 @@ class TopHotels extends TestCase
 
 	public function testSuccessTopHotelsTest()
 	{
-		$response = $this->json('get','/hotels/best-hotels', [
+		$response = $this->json('get','/api/hotels/best-hotels', [
 			"from"           => "2019-01-01",
 			"to"             => "2019-01-30",
 			"city"           => "IATA",
@@ -43,7 +43,7 @@ class TopHotels extends TestCase
 
 	public function testSuccessTopHotelsWithoutReturnDataTest()
 	{
-		$response = $this->json('get','/hotels/best-hotels', [
+		$response = $this->json('get','/api/hotels/best-hotels', [
 			"from"          => "2018-11-01",
 			"to"            => "2018-12-30",
 			"city"              => "IATA",
@@ -57,7 +57,7 @@ class TopHotels extends TestCase
 
 	public function testTopHotelsWithValidationErrorTest()
 	{
-		$response = $this->json('get','/hotels/best-hotels', [
+		$response = $this->json('get','/api/hotels/best-hotels', [
 			"from"          => "2019-01-01",
 			"to"            => "2019-01-30",
 			"city"          => "IATA",
@@ -71,7 +71,7 @@ class TopHotels extends TestCase
 
 	public function testTopHotelsWithoutRequiredCityTest()
 	{
-		$response = $this->json('get','/hotels/best-hotels', [
+		$response = $this->json('get','/api/hotels/best-hotels', [
 			"from"           => "2019-01-01",
 			"to"             => "2019-01-30",
 			"city"           => "",
